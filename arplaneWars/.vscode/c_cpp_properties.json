@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "name": "win",
+            "includePath": [
+                "${default}",
+                "${workspaceFolder}/**",
+                "E:/Library/SDL2/include/**",
+                "F:/VStudio/VS_position/VC/Tools/MSVC/14.38.33130/include/**"
+            ],
+            "defines": [],
+            "compilerPath":"F:/VStudio/VS_position/VC/Tools/MSVC/14.38.33130/bin/Hostx64/x64/cl.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}          

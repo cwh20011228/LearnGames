@@ -2,6 +2,9 @@
 cmake_minimum_required(VERSION 3.5.0)
 project(airplaneWars VERSION 0.1.0 LANGUAGES C CXX)
 
+# 启用编译命令导出
+set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
+
 # 设置C++标准
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -28,8 +31,8 @@ add_executable(${TARGET} hello.cpp)
 
 # 链接库
 target_link_libraries(${TARGET}
-                        SDL2::SDL2
-                        SDL2::SDL2main)
+                        ${SDL2_LIBRARIES}
+                        )
 
 
 # if(WIN32)

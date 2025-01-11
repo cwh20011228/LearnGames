@@ -29,19 +29,25 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 30,
+				"line" : 38,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 33,
+				"line" : 41,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
 				"line" : 14,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 22,
 				"parent" : 0
 			}
 		]
@@ -57,6 +63,10 @@
 				{
 					"backtrace" : 3,
 					"fragment" : "/W4"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "/source-charset:utf-8"
 				}
 			],
 			"includes" : 
@@ -109,6 +119,21 @@
 			{
 				"backtrace" : 2,
 				"fragment" : "E:\\Library\\SDL2\\cmake\\..\\lib\\x64\\SDL2.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "E:\\Library\\SDL2\\cmake\\..\\lib\\x64\\SDL2_image.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "E:\\Library\\SDL2\\cmake\\..\\lib\\x64\\SDL2_mixer.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "E:\\Library\\SDL2\\cmake\\..\\lib\\x64\\SDL2_ttf.lib",
 				"role" : "libraries"
 			},
 			{

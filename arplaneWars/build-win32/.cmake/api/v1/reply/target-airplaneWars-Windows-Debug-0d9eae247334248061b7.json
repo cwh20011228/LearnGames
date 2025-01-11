@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "MinSizeRel/airplaneWars-Windows.exe"
+			"path" : "E:/github_mycode/LearnGames/arplaneWars/airplaneWars-Windows.exe"
 		},
 		{
-			"path" : "MinSizeRel/airplaneWars-Windows.pdb"
+			"path" : "E:/github_mycode/LearnGames/arplaneWars/airplaneWars-Windows.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -29,19 +29,25 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 30,
+				"line" : 38,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 33,
+				"line" : 41,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
 				"line" : 14,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 22,
 				"parent" : 0
 			}
 		]
@@ -52,11 +58,15 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG -std:c++17"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17"
 				},
 				{
 					"backtrace" : 3,
 					"fragment" : "/W4"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "/source-charset:utf-8"
 				}
 			],
 			"includes" : 
@@ -94,11 +104,11 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG",
+				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1",
 				"role" : "flags"
 			},
 			{
-				"fragment" : "/machine:x64 /INCREMENTAL:NO /subsystem:console",
+				"fragment" : "/machine:x64 /debug /INCREMENTAL /subsystem:console",
 				"role" : "flags"
 			},
 			{
@@ -109,6 +119,21 @@
 			{
 				"backtrace" : 2,
 				"fragment" : "E:\\Library\\SDL2\\cmake\\..\\lib\\x64\\SDL2.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "E:\\Library\\SDL2\\cmake\\..\\lib\\x64\\SDL2_image.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "E:\\Library\\SDL2\\cmake\\..\\lib\\x64\\SDL2_mixer.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "E:\\Library\\SDL2\\cmake\\..\\lib\\x64\\SDL2_ttf.lib",
 				"role" : "libraries"
 			},
 			{

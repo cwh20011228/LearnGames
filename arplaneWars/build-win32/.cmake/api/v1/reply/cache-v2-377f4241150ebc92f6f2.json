@@ -1090,6 +1090,42 @@
 			"value" : "E:/Library/SDL2/cmake"
 		},
 		{
+			"name" : "SDL2_image_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for SDL2_image."
+				}
+			],
+			"type" : "PATH",
+			"value" : "E:/Library/SDL2/cmake"
+		},
+		{
+			"name" : "SDL2_mixer_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for SDL2_mixer."
+				}
+			],
+			"type" : "PATH",
+			"value" : "E:/Library/SDL2/cmake"
+		},
+		{
+			"name" : "SDL2_ttf_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for SDL2_ttf."
+				}
+			],
+			"type" : "PATH",
+			"value" : "E:/Library/SDL2/cmake"
+		},
+		{
 			"name" : "airplaneWars_BINARY_DIR",
 			"properties" : 
 			[

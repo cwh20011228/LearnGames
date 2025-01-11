@@ -21,6 +21,12 @@ D:/Program Files/CMake/share/cmake-3.29/Modules/Platform/Windows.cmake
 D:/Program Files/CMake/share/cmake-3.29/Modules/Platform/WindowsPaths.cmake
 E:/Library/SDL2/cmake/sdl2-config-version.cmake
 E:/Library/SDL2/cmake/sdl2-config.cmake
+E:/Library/SDL2/cmake/sdl2_image-config-version.cmake
+E:/Library/SDL2/cmake/sdl2_image-config.cmake
+E:/Library/SDL2/cmake/sdl2_mixer-config-version.cmake
+E:/Library/SDL2/cmake/sdl2_mixer-config.cmake
+E:/Library/SDL2/cmake/sdl2_ttf-config-version.cmake
+E:/Library/SDL2/cmake/sdl2_ttf-config.cmake
 E:/github_mycode/LearnGames/arplaneWars/CMakeLists.txt
 E:/github_mycode/LearnGames/arplaneWars/build-win32/CMakeFiles/3.29.2/CMakeCCompiler.cmake
 E:/github_mycode/LearnGames/arplaneWars/build-win32/CMakeFiles/3.29.2/CMakeCXXCompiler.cmake

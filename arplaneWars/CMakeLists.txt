@@ -16,6 +16,11 @@ else()
     add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
+# 当使用 gcc 或 clang 编译器时, 设置输入代码的编码格式为 utf-8
+add_compile_options("$<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-finput-charset=UTF-8>")
+# 当使用 MSVC 编译器时, 设置输入代码的编码格式为 utf-8
+add_compile_options("$<$<C_COMPILER_ID:MSVC>:/source-charset:utf-8>")
+
 # 设置输出目录
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_SOURCE_DIR})
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_SOURCE_DIR})
@@ -25,6 +30,9 @@ set(TARGET ${PROJECT_NAME}-${CMAKE_SYSTEM_NAME})
 
 # 查找并处理预设的SDL2库
 find_package(SDL2 REQUIRED)
+find_package(SDL2_image REQUIRED)
+find_package(SDL2_mixer REQUIRED)
+find_package(SDL2_ttf REQUIRED)
 
 # 编译可执行文件
 add_executable(${TARGET} hello.cpp)
@@ -32,6 +40,9 @@ add_executable(${TARGET} hello.cpp)
 # 链接库
 target_link_libraries(${TARGET}
                         ${SDL2_LIBRARIES}
+                        SDL2_image::SDL2_image
+                        SDL2_mixer::SDL2_mixer
+                        SDL2_ttf::SDL2_ttf
                         )
 
 

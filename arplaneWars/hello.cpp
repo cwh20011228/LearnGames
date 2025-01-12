@@ -6,17 +6,24 @@
 
 int main(int, char **)
 {
-    std::cout << "hello world" << std::endl;
-    
+    std::cout << "hello world 你好" << std::endl;
+    SDL_Log("SDL version:%d.%d.%d",SDL_MAJOR_VERSION,SDL_MINOR_VERSION,SDL_PATCHLEVEL);
+
     // 1. SDL初始化
     if(SDL_Init(SDL_INIT_EVERYTHING ) != 0){
-        std::cerr<<"SDL_Init Error:"<<SDL_GetError()<<std::endl;
+        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION,"无法初始化 SDL: %s",SDL_GetError());
         return 1;
     }
     // 1.1. 创建窗口
     SDL_Window* window = SDL_CreateWindow("SDL Example", 100, 100, 800, 600, SDL_WINDOW_SHOWN);
     // 1.2. 创建渲染器
     SDL_Renderer* renderer = SDL_CreateRenderer(window, -1 , SDL_RENDERER_ACCELERATED);
+    if (!renderer) {
+        std::cerr << "渲染器创建失败: " << SDL_GetError() << std::endl;
+        SDL_DestroyWindow(window);
+        SDL_Quit();
+        return -1;
+    }
 
 
     // 2. SDL_image初始化
@@ -45,18 +52,19 @@ int main(int, char **)
         return 1;
     }
     // 加载字体
-    TTF_Font *font = TTF_OpenFont("assets/font/ark-pixel-10px-monospaced-zh_hk.ttf",24);
+    TTF_Font *font = TTF_OpenFont("assets/font/ark-pixel-10px-monospaced-zh_cn.ttf",24);
     if (!font) {
         std::cerr << "Failed to load font: " << TTF_GetError() << std::endl;
         return -1;
     }   
     // 渲染字体
     SDL_Color color = {255,255,255};
-    SDL_Surface *surface = TTF_RenderUTF8_Blended(font,"Hello SDL,你好 lll",color);
+    SDL_Surface *surface = TTF_RenderUTF8_Blended(font,"Hello SDL!",color);
     SDL_Texture *ttfTexture = SDL_CreateTextureFromSurface(renderer,surface);
 
-    while(true){
-        SDL_Event event;
+    bool running = true;
+    SDL_Event event;
+    while(running){
         if(SDL_PollEvent(&event)){
             if(event.type == SDL_QUIT){
                 break;
@@ -85,7 +93,6 @@ int main(int, char **)
             SDL_RenderPresent(renderer);
         }
     }
-
 
     // 销毁图片资源
     SDL_DestroyTexture(image);

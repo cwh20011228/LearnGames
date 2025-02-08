@@ -1,7 +1,5 @@
-<h2 id="aUGWM">CMake配置</h2>
-![画板](https://cdn.nlark.com/yuque/0/2025/jpeg/21377317/1736264996890-e4195806-4382-40c1-99e7-92853d18e08f.jpeg)
-
 ```cmake
+
 # 标题
 cmake_minimum_required(VERSION 3.5.0)
 project(airplaneWars VERSION 0.1.0 LANGUAGES C CXX)

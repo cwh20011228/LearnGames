@@ -25,6 +25,10 @@ int main(int, char **)
         return -1;
     }
 
+    std::cout<< "SDL_GetNumRenderDrivers = " << SDL_GetNumRenderDrivers() << std::endl;
+    SDL_RendererInfo info;
+    std::cout << "SDL_GetRenderDriverInfo = " << SDL_GetRenderDriverInfo(-1,&info)<<std::endl;
+
 
     // 2. SDL_image初始化
     if(IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG ) == 0){
@@ -43,6 +47,11 @@ int main(int, char **)
     // 读取音乐
     Mix_Music *music = Mix_LoadMUS("assets/music/03_Racing_Through_Asteroids_Loop.ogg");
     // 播放音乐
+    if(!music){
+        std::cerr << "加载音乐失败：" << Mix_GetError() <<std::endl;
+        Mix_CloseAudio();
+        return 1;
+    }
     Mix_PlayMusic(music,-1);
 
 
@@ -52,7 +61,7 @@ int main(int, char **)
         return 1;
     }
     // 加载字体
-    TTF_Font *font = TTF_OpenFont("assets/font/ark-pixel-10px-monospaced-zh_cn.ttf",24);
+    TTF_Font *font = TTF_OpenFont("assets/font/VonwaonBitmap-16px.ttf",24);
     if (!font) {
         std::cerr << "Failed to load font: " << TTF_GetError() << std::endl;
         return -1;

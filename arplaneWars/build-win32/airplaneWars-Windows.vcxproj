@@ -325,7 +325,12 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="E:\github_mycode\LearnGames\arplaneWars\hello.cpp" />
+    <ClCompile Include="E:\github_mycode\LearnGames\arplaneWars\src\main.cpp" />
+    <ClCompile Include="E:\github_mycode\LearnGames\arplaneWars\src\Scene.cpp" />
+    <ClCompile Include="E:\github_mycode\LearnGames\arplaneWars\src\Game.cpp" />
+    <ClCompile Include="E:\github_mycode\LearnGames\arplaneWars\src\SceneMain.cpp" />
+    <ClCompile Include="E:\github_mycode\LearnGames\arplaneWars\src\SceneStart.cpp" />
+    <ClCompile Include="E:\github_mycode\LearnGames\arplaneWars\src\SceneEnd.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="E:\github_mycode\LearnGames\arplaneWars\build-win32\ZERO_CHECK.vcxproj">

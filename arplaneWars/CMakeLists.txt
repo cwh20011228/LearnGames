@@ -35,7 +35,14 @@ find_package(SDL2_mixer REQUIRED)
 find_package(SDL2_ttf REQUIRED)
 
 # 编译可执行文件
-add_executable(${TARGET} hello.cpp)
+add_executable(${TARGET} 
+                "src/main.cpp"
+                "src/Scene.cpp"
+                "src/Game.cpp"
+                "src/SceneMain.cpp"
+                "src/SceneStart.cpp"
+                "src/SceneEnd.cpp")
+# add_executable(${TARGET} main.cpp)
 
 # 链接库
 target_link_libraries(${TARGET}

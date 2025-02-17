@@ -7,7 +7,7 @@ class Scene
 {
 public:
     Scene();
-    ~Scene();
+    virtual ~Scene();
     virtual void init();
     virtual void handleEvent(SDL_Event* event);
     virtual void update();

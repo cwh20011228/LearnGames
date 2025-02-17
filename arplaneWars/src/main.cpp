@@ -7,9 +7,10 @@
 
 int main(int, char **)
 {
-    std::shared_ptr<Game> mGame = std::make_shared<Game>();
-    mGame->init();
-    mGame->run();
+    Game& game = Game::getInstance();
+
+    game.init();
+    game.run();
 
     return 0;
 }

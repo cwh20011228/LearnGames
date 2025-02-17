@@ -1,10 +1,15 @@
 #ifndef SCENE_MAIN_H
 #define SCENE_MAIN_H
 
+#include <memory>
 #include "Scene.h"
+#include "object.h"
+
+class Game;
 
 class SceneMain : public Scene
 {
+public:
     SceneMain();
     ~SceneMain();
 
@@ -13,5 +18,9 @@ class SceneMain : public Scene
     void update() override;
     void render() override;
     void clean() override;
+
+private:
+    std::shared_ptr<Player> mPlayer;
+    Game& mGame;
 };
 #endif

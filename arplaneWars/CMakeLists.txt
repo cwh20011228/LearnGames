@@ -42,7 +42,6 @@ add_executable(${TARGET}
                 "src/SceneMain.cpp"
                 "src/SceneStart.cpp"
                 "src/SceneEnd.cpp")
-# add_executable(${TARGET} main.cpp)
 
 # 链接库
 target_link_libraries(${TARGET}

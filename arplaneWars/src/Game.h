@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include <SDL.h>
+#include <SDL_image.h>
 #include <memory>
 #include <iostream>
 #include "Scene.h"
@@ -9,9 +10,14 @@
 
 class Game
 {
-public:
+private:
     Game();
     Game(int width, int height);
+
+    Game(const Game&) = delete;
+    Game& operator=(const Game&) = delete;
+
+public:
     ~Game();
     void run(); // 主循环
     void init();
@@ -21,6 +27,12 @@ public:
     void handleEvent(SDL_Event* event);
     void update();
     void render();
+
+    static Game& getInstance();
+    SDL_Window* getWindow() const;
+    SDL_Renderer* getRender() const;
+    int getWidth() const;
+    int getHeight() const;
 
 private:
     bool mIsRunning{true};

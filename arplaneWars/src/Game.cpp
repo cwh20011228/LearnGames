@@ -10,6 +10,27 @@ Game::Game(int width, int height)
     mCurrentScene = std::make_shared<Scene>();
 }
 
+Game& Game::getInstance(){
+    static Game instance;
+    return instance;
+}
+
+SDL_Window* Game::getWindow() const{
+    return mWindow;
+}
+
+SDL_Renderer* Game::getRender() const{
+    return mRenderer;
+}
+
+int Game::getWidth() const{
+    return mWidth;
+}
+
+int Game::getHeight() const{
+    return mHeight;
+}
+
 Game::~Game(){
     if (mCurrentScene){
         mCurrentScene->clean();
@@ -48,27 +69,32 @@ void Game::init(){
         SDL_LogError(SDL_LOG_CATEGORY_ERROR, "渲染器创建失败: %s\n", SDL_GetError());
         mIsRunning = false;
     }
+
+    if(IMG_Init(IMG_INIT_PNG) != IMG_INIT_PNG){
+        SDL_LogError(SDL_LOG_CATEGORY_ERROR,"SDL_image初始化失败: %s\n",IMG_GetError());
+        mIsRunning = false;
+    }
+
+    // 切换为初始场景
+    changeScene(std::make_shared<SceneMain>());
 }
 
 void Game::clean(){
+    IMG_Quit();
     SDL_DestroyRenderer(mRenderer);
     SDL_DestroyWindow(mWindow);
     SDL_Quit();
 }
 
 void Game::changeScene(std::shared_ptr<Scene> scene){
-    if (mCurrentScene)
-    {
+    if (mCurrentScene){
         mCurrentScene->clean();
     }
 
-    if (scene)
-    {
+    if (scene){
         mCurrentScene = std::move(scene);
         mCurrentScene->init();
-    }
-    else
-    {
+    }else{
         mCurrentScene.reset();
     }
 }
